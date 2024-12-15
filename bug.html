@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      // Incorrect way to remove element
+      document.getElementById("myDiv").remove();
+      // Attempting to access removed element causes error
+      document.getElementById("myDiv").innerHTML = "Text changed";
+    }
+  </script>
+</body>
+</html>
